@@ -6,7 +6,7 @@
 /*   By: echin <echin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:36:32 by echin             #+#    #+#             */
-/*   Updated: 2020/11/26 22:48:19 by echin            ###   ########.fr       */
+/*   Updated: 2021/01/18 20:47:24 by echin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	int		i;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
 	start = 0;
 	end = (int)(ft_strlen(s1) - 1);
