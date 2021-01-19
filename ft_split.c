@@ -6,11 +6,21 @@
 /*   By: echin <echin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 21:23:04 by echin             #+#    #+#             */
-/*   Updated: 2021/01/18 20:42:49 by echin            ###   ########.fr       */
+/*   Updated: 2021/01/19 22:00:32 by echin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void		ft_free_splits(char **splits, int n)
+{
+	int	i;
+
+	i = -1;
+	while (++i < n)
+		free(splits[i]);
+	free(splits);
+}
 
 static int		ft_count_words(char const *s, char c)
 {
@@ -57,27 +67,31 @@ static int		ft_create_splits(char **splits, char const *s, char c)
 				while (s[i + len] && s[i + len] != c)
 					len++;
 				if (!(splits[++w] = ft_calloc(sizeof(char), len + 1)))
-					return (0);
+					return (w);
 			}
 			splits[w][j] = s[i];
 			splits[w][++j] = '\0';
 		}
 	}
-	return (1);
+	return (0);
 }
 
 char			**ft_split(char const *s, char c)
 {
 	int		words_count;
 	char	**splits;
+	int		nb_malloc;
 
 	if (s == 0)
 		return (0);
 	words_count = ft_count_words(s, c);
 	if (!(splits = ft_calloc(sizeof(char *), words_count + 1)))
 		return (0);
-	if (!ft_create_splits(splits, s, c))
+	if ((nb_malloc = ft_create_splits(splits, s, c)))
+	{
+		ft_free_splits(splits, nb_malloc);
 		return (0);
+	}
 	splits[words_count] = 0;
 	return (splits);
 }
