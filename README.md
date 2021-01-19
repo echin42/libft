@@ -22,9 +22,8 @@ The functions can then be used in other projects.
 2. Bonus Part
     - ***linked_list*** :
     [`ft_lstnew`](./ft_lstnew.c) [`ft_lstadd_front`](./ft_lstadd_front.c) [`ft_lstsize`](./ft_lstsize.c) [`ft_lstlast`](./ft_lstlast.c) [`ft_lstadd_back`](./ft_lstadd_back.c) [`ft_lstdelone`](./ft_lstdelone.c) [`ft_lstclear`](./ft_lstclear.c) [`ft_lstiter`](./ft_lstiter.c) [`ft_lstmap`](./ft_lstmap.c)
----
 
-### :sunny: Testers
+## :sunny: Testers
 - __Libftest__ by [_jtoty_](https://github.com/jtoty/Libftest)
     ```
     git clone https://github.com/jtoty/Libftest.git
@@ -38,6 +37,6 @@ The functions can then be used in other projects.
     git clone https://github.com/ska42/libft-war-machine.git
     ```
 ## :sunny: Evaluation log
-1. 78% KO [21/01/17]
-2. 115% OK [21/01/19]
+1. 78%	KO [21/01/17]
+2. 115%	OK [21/01/19]
 	- Mandatory 100 + Bonus 15
